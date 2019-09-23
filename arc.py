@@ -52,17 +52,20 @@ def get_arc_points(center, p1, p2,step=0.01):
 
 
 if __name__=='__main__':
-    P1=[0,1,1]
-    P2=[1,0,1]
-    C=[0,0,0]
-    arc=get_arc_points(C,P1,P2,0.01)
-    fig=plt.figure()
+    # key points of arc.
+    P1 = [0, 1, 1]
+    P2 = [1, 0, 1]
+    C = [0, 0, 0]
+    # get points of arc
+    arc = get_arc_points(C, P1, P2, 0.01)
+    # show the result
+    fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-    ax.plot3D(arc[0,:],arc[1,:],arc[2,:])
-    ax.set_zlabel('Z')  # 坐标轴
+    ax.plot3D(arc[0, :], arc[1, :], arc[2, :])
+    ax.set_zlabel('Z')
     ax.set_ylabel('Y')
     ax.set_xlabel('X')
-    ax.scatter3D(P1[0],P1[1],P1[2])
+    ax.scatter3D(P1[0], P1[1], P1[2])
     ax.scatter3D(P2[0], P2[1], P2[2])
     ax.scatter3D(C[0], C[1], C[2])
     plt.show()
